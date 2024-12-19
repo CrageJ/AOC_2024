@@ -21,8 +21,6 @@ class VideoGenerator:
                 self.colour_scheme[colour] = tuple(v / 255 for v in tup)
             else:
                 self.colour_scheme[colour] = tup
-                
-        self.n_colours = len(self.colour_scheme)
         self.cmap = self.create_colormap()
         
         # Create necessary directories
@@ -52,8 +50,7 @@ class VideoGenerator:
             
     def generate_palette(self):
         """Generates a palette visualization for the color map."""
-        grid = np.array([[i for i in range(self.n_colours)]])
-        plt.figure(figsize=(2, 0.5))
+        grid = np.array([[i for i in range(256)]])
         plt.imshow(grid, cmap=self.cmap)
         plt.axis('off')
         plt.tight_layout(pad=0)
