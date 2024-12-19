@@ -3,3 +3,6 @@
 **/.ipynb_checkpoints
 .*
 ./*
+**/visualisations/
+**/__pycache__/
+gifs/
